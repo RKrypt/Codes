@@ -1,0 +1,36 @@
+import java.text.DecimalFormat;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        DecimalFormat dc = new DecimalFormat("#,###.00");
+        MyArraySubclass<Double> objDouble = new MyArraySubclass<>();
+
+        do{
+            try{
+
+                System.out.print("Enter money: ");
+                double money = scanner.nextDouble();
+
+                if (money < 50){
+                    System.out.println("Unacceptable amount! Hourly rate should be 50.00 pesos or above.");
+                }else{
+                    objDouble.setValue(money);
+                    break;
+                }
+
+            }catch(InputMismatchException e){
+
+                System.out.println("Invalid Input");
+                scanner.next();
+
+            }
+
+        }while(true);
+
+        System.out.println("Daily salary is: " + dc.format(objDouble.total()));
+    }
+}

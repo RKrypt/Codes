@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+import java.text.DecimalFormat;
+
+public class MyArraySubclass <T> extends MyArray<T>{
+    ArrayList<Double> arr = new ArrayList<>();
+    DecimalFormat dc = new DecimalFormat("#,###.00");
+
+    private T money;
+
+    public void setValue(T money){
+        this.money = money;
+        arr.add((Double) money);
+    }
+
+    public double getValue(){
+        return (double) money;
+    }
+    public void print() {
+        double total = 0;
+        for(double number: arr){
+            System.out.print("" + dc.format(number) + ", ");
+            total = total+=number;
+        }
+        System.out.println("");
+        System.out.print("Your total is: " + dc.format(total) + " pesos");
+
+    }
+}

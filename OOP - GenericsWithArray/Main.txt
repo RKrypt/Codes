@@ -1,0 +1,38 @@
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String [] args){
+        Scanner scanner = new Scanner(System.in);
+        DecimalFormat dc = new DecimalFormat("#,##.00");
+        MyArraySubclass <Double> objDouble = new MyArraySubclass<>();
+        ArrayList<Double> arr = new ArrayList<>();
+
+        do{
+            try{
+                System.out.print("Enter money: ");
+                double money = scanner.nextDouble();
+
+                if(money != 0){
+                    if(money < 50){
+                        System.out.println("Need to be 50 or above");
+                    }else{
+                        objDouble.setValue(money);
+                        arr.add(money);
+                    }
+                }else{
+                        System.out.print("Cash in the list are: ");
+                        objDouble.print();
+
+                    break;
+                }
+            }catch(Exception e){
+                System.out.println("Invalid!");
+                scanner.next();
+            }
+        }while(true);
+
+
+    }
+}

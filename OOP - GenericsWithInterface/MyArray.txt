@@ -1,0 +1,5 @@
+public interface MyArray <T> {
+    public void setValue(T money);
+
+
+}

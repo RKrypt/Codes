@@ -1,0 +1,7 @@
+public abstract class MyArray <T>{
+    public abstract void setValue(T money);
+    public abstract void print();
+
+    public abstract double getValue();
+
+}

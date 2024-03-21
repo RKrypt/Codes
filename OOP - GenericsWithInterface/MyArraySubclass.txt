@@ -1,0 +1,12 @@
+public class MyArraySubclass <T> implements  MyArray <T>{
+    private T money;
+
+    public double total(){
+        return (double) money * 8;
+    }
+    public void setValue(T money) {
+        this.money = money;
+    }
+
+
+}
